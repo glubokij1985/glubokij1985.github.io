@@ -1,0 +1,404 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'SegoeWPLight';
+	src: url('../fonts/SegoeWPLight.eot');
+	src: local('☺'), url('../fonts/SegoeWPLight.woff') format('woff'), url('../fonts/SegoeWPLight.ttf') format('truetype'), url('../fonts/SegoeWPLight.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+  font-family: 'SegoeWPN';
+  src: url('../fonts/SegoeWPN.eot');
+  src: local('☺'), url('../fonts/SegoeWPN.woff') format('woff'), url('../fonts/SegoeWPN.ttf') format('truetype'), url('../fonts/SegoeWPN.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?fefwt1');
+  src:  url('../fonts/icomoon.eot?fefwt1#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?fefwt1') format('truetype'),
+    url('../fonts/icomoon.woff?fefwt1') format('woff'),
+    url('../fonts/icomoon.svg?fefwt1#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ico1:before {
+  content: "\e900";
+}
+.icon-ico2:before {
+  content: "\e901";
+}
+.icon-ico3:before {
+  content: "\e902";
+}
+.icon-ico4:before {
+  content: "\e903";
+}
+.icon-ico5:before {
+  content: "\e904";
+}
+.icon-ico6:before {
+  content: "\e905";
+}
+.icon-ico7:before {
+  content: "\e906";
+}
+
+$main-color: #999999;
+$main-bg: #6699ff;
+$main-bg-hover: #3b73e4;
+$slider-color: #fff;
+
+@mixin transition($duration){
+	-webkit-transition: all $duration ease-in-out;
+	-moz-transition: all $duration ease-in-out;
+	-ms-transition: all $duration ease-in-out;
+	-o-transition: all $duration ease-in-out;
+	transition: all $duration ease-in-out;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html,
+body{
+  margin:0;
+  padding:0;
+  font-size: 14px;
+  font-family: 'SegoeWPN', Arial, sans-serif;
+  color: $main-color;
+  min-width: 320px;
+  background: #fff;
+}
+input, textarea, a, button, input:focus, textarea:focus, a:focus, button:focus{outline: none;}
+a, button, input, textarea{
+	@include transition(.2s);
+}
+
+.header-holder{
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }  
+}
+
+.flex-end{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.flex-top{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+.flex-center{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.flex-just-between{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+.container{
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.header-holder{
+  padding: 23px 25px 18px;
+}
+.logo-holder{
+  width: 178px;
+  height: 44px;
+  a{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    img{
+      display: inline-block;
+    }
+  }
+}
+.menu{
+  margin: 0 -3px -18px 0;
+  li{
+    margin: 0 0 0 30px;
+    &:first-child{
+      margin: 0;
+    }
+    a{
+      display: inline-block;
+      color: #666666;
+      font-size: 20px;
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      text-transform: capitalize;
+      letter-spacing: 0.2px;
+      padding: 25px 5px 18px;
+      &:hover{
+        border-bottom: 3px solid $main-bg;
+      }
+    }
+  }  
+}
+.burger-btn{
+  display: none;
+}
+.main-slider-holder{
+  background: url(../images/slider-bg.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 35px 0 10px;
+  margin: 0 0 65px;
+  position: relative;
+  .img-holder{
+    width: 44%;
+    margin: 0 0 0 60px;
+    img{
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      max-height: 450px;
+    }
+  }
+}
+.triangle-border{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  background: url(../images/triangle.png) repeat-x 0 100%;
+}
+.slide-description{
+  color: $slider-color;
+  font-family: 'SegoeWPLight', Arial, sans-serif;
+  width: 50%;
+  margin: 111px 0 0;
+}
+.slide-description-title{
+  font-size: 42px;
+  margin: 0 0 3px;
+  height: 48px;
+  overflow: hidden;
+}
+.slide-description-text{
+  max-height: 90px;
+  overflow: hidden;
+  margin: 0 0 30px;
+  p{
+    font-size: 26px;
+    line-height: 44px;    
+  }
+}
+.slide-description-btn{
+  font-size: 22px;
+  color: $slider-color;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 10px;
+  border-radius: 2px;
+  background: $main-bg;
+  margin: 0 0 0 10px;
+  letter-spacing: 0.4px;
+  span{
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+    font-size: 23px;
+    line-height: 41px;
+  }
+  &:hover{
+    background: $main-bg-hover;
+  }
+}
+.slick-arrow{
+  width: 24px;
+  height: 63px;
+  font-size: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;  
+  margin-top: -23px;
+  &:before{
+    content: '\e904';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'icomoon';
+    font-size: 63px;
+    color: $slider-color;
+  }
+}
+.slick-next{
+  right: -20px;
+  &:before{
+    content: '\e905';
+  }  
+}
+.slick-prev{
+  left: -20px;
+}
+.main-section{
+  margin: 0 0 87px;
+}
+.main-item{
+  max-width: 310px;
+  text-align: center;
+  .ico-holder{
+    @include transition(.5s);
+    width: 186px;
+    height: 186px;
+    border-radius: 50%;    
+    span{
+      font-size: 108px;
+      color: #fff;
+      display: inline-block;
+    }
+    &:hover{
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
+  }
+  .ico-holder.blue{
+    background: $main-bg;
+  }
+  .ico-holder.red{
+    background: #cc3333;
+    span{
+      font-size: 81px;
+    }
+  }
+  .ico-holder.yellow{
+    background: #ffcc00;
+    span{
+      font-size: 90px;
+    }
+  }
+  .main-item-title{
+    color: $main-bg;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 0 7px;
+    height: 23px;
+    overflow: hidden;
+  }
+  .main-item-description{
+    font-size: 14px;
+    text-align: center;
+    line-height: 16px;
+    max-height: 33px;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.ico-holder-outer{
+  margin: 0 0 26px;
+  display: inline-block;
+}
+.cart-block{
+  margin: 0 0 47px;
+  .container{
+    padding: 0 50px;
+  }
+  .img-block{
+    float: left;
+    width: 48%;
+  }
+  .img-holder{
+  	img{
+  		max-width: 100%;
+	    width: auto;
+	    height: auto;
+	    max-height: 279px;
+  	}
+  }
+}
+.cart-block-title{
+  color: #6f7173;
+  font-size: 42px;
+  margin: 0 0 40px;
+  letter-spacing: 0.3px;
+}
+.cart-block-description{
+  padding: 58px 0 0;
+  width: 92%;
+}
+.cart-block-description-title{
+  color: #6f7173;
+  font-size: 26px;
+  margin: 0 0 16px;
+  height: 30px;
+  overflow: hidden;
+  letter-spacing: 0.2px;
+}
+.cart-block-description-text{
+  font-size: 15px;
+  line-height: 36px;
+  font-family: 'SegoeWPLight', Arial, sans-serif;
+  max-height: 255px;
+  overflow: hidden;
+}
+footer{
+  border-top: 1px solid #e5e5e5;
+  padding: 32px 0 40px;
+  font-family: 'SegoeWPLight', Arial, sans-serif;
+  text-align: center;
+  font-size: 15px;
+}
